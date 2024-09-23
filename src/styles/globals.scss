@@ -74,23 +74,135 @@ body {
 .app {
   width: 100vw;
   font-family: var(--font-inter);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
+  padding-top: var(--distance-top);
+  max-width: var(--max-page-width);
+  margin-inline: auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+
+  &__title {
+    font-size: var(--text-xl);
+    font-weight: 600;
+  }
+
+  &__settings {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__settingsBox {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    font-size: var(--text-xs);
+    color: var(--color-text-accent);
+  }
 }
 
 .main {
-  height: 100vh;
+  height: calc(100dvh - var(--distance-top));
   overflow-x: hidden;
-  overflow-y: auto;
-  flex-grow: 1;
-  padding-top: var(--distance-top);
-  display: flex;
-  flex-direction: column;
+  overflow-y: hidden;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    'profile activity'
+    'graph graph';
+  gap: 1.125rem;
   background: var(--color-background-accent);
 
   @include mx.breakpoint(lg) {
     height: auto;
     background: var(--color-background);
+    overflow-y: auto;
     padding-inline: 1rem;
+  }
+
+  &__settings {
+    display: flex;
+  }
+}
+
+.card {
+  border-radius: var(--border-radius-1);
+  box-shadow: var(--box-shadow-light);
+  padding: 1.25rem;
+
+  &--profile {
+    grid-area: profile;
+  }
+
+  &--activity {
+    grid-area: activity;
+  }
+
+  &--graph {
+    grid-area: graph;
+  }
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &__image {
+    --image-size: 150px;
+    margin-block: 0.875rem;
+    border-radius: var(--border-radius-full);
+    width: var(--image-size);
+    height: var(--image-size);
+    box-shadow: var(--box-shadow-medium);
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__details {
+    margin-block: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  &__name {
+    font-size: var(--text-lg);
+    font-weight: 600;
+  }
+
+  &__title {
+    color: var(--color-text-accent);
+  }
+
+  &__bio {
+    margin-top: 0.75rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--color-text-accent);
+    justify-content: space-between;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  &__label {
+    height: 24px;
+    width: 24px;
+    stroke-width: 2;
+    stroke: currentColor;
   }
 }
 

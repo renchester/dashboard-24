@@ -1,6 +1,6 @@
 @use './mixins' as mx;
 
-body {
+.app {
   --max-page-width: 1400px;
   --distance-top: 2rem;
   --sidebar-width: 225px;
@@ -80,4 +80,42 @@ body {
   --border-radius-full: 10em;
   --border-radius-1: 10px;
   --border-radius-2: 4.5px;
+}
+
+.app.dark-mode {
+  //====== COLOR VARIABLES ======//
+  --color-primary: #422afb;
+  --color-secondary: #80d8ff;
+  --color-accent-1: #202b5d;
+  --color-accent-2: #11047a;
+  --color-accent-3: #8f9bba;
+
+  --color-success: #01b574;
+  --color-error: #ee5d50;
+
+  --color-background: #fefefe;
+  --color-background-accent: #f5f7fe;
+  --color-background-alpha75: #fefefebe;
+  --color-background-alpha50: #fefefe86;
+  --color-background-alpha25: #fefefe48;
+  --color-background-opposite: #353535;
+
+  --color-light-1: #fefefe;
+  --color-light-2: #f4ebd9;
+  --color-dark-1: #3a3b37;
+  --color-dark-2: #090909;
+
+  --color-text: #1c1c1c;
+  --color-text-accent: #3b3a42;
+  --color-text-alpha75: #3b3a42b7;
+  --color-text-alpha50: #3b3a4283;
+  --color-text-alpha25: #3b3a4248;
+  --color-text-alpha10: #3b3a421f;
+  --color-text-opposite: #f2f5ff;
+
+  --color-grey-light-1: #e9e9e9;
+  --color-grey-light-2: #f2efee;
+  --color-grey-light-3: #d3c7c3;
+  --color-grey-dark-1: #4b4747;
+  --color-grey-dark-2: #272525;
 }
