@@ -14,7 +14,7 @@ export type UserDetails = {
 };
 
 function App() {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
   const [isEmailOn, setEmailStatus] = useState(false);
   const toggleDarkTheme = () => setIsDark((currentTheme) => !currentTheme);
   const toggleEmailStatus = () =>
