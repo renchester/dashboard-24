@@ -24,9 +24,12 @@ function App() {
     email: 'renchesterjramos@gmail.com',
     bio: 'A full-stack web developer with a background in architecture, he has a passion for creating smooth experiences for the end-user.',
   });
-  const handleDetailsChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {};
+  const handleDetailsChange = (name: string, value: string) => {
+    setUserDetails((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
 
   const [isDark, setIsDark] = useState(true);
   const [isEmailOn, setEmailStatus] = useState(false);
@@ -37,23 +40,40 @@ function App() {
   return (
     <Providers>
       <div className={`app ${isDark ? 'dark-mode' : ''}`}>
-        <h1>Dashboard</h1>
-        <div>
-          <form action="">
-            <label htmlFor="switch_theme">Dark Mode:</label>
-            <Switch isOn={isDark} id="switch_theme" handler={toggleDarkTheme} />
-            <label htmlFor="switch_email">Email Notifications:</label>
-            <Switch
-              isOn={isEmailOn}
-              id="switch_email"
-              handler={toggleEmailStatus}
-            />
+        <div className="top">
+          <h1 className="top__title">Dashboard</h1>
+          <form action="" className="top__settings">
+            <div className="top__settingsBox">
+              <label htmlFor="switch_theme" className="top__settingsLabel">
+                Dark Mode:
+              </label>
+              <Switch
+                isOn={isDark}
+                id="switch_theme"
+                handler={toggleDarkTheme}
+              />
+            </div>
+            <div className="top__settingsBox">
+              <label htmlFor="switch_email" className="top__settingsLabel">
+                Email Notifications:
+              </label>
+              <Switch
+                isOn={isEmailOn}
+                id="switch_email"
+                handler={toggleEmailStatus}
+              />
+            </div>
           </form>
+        </div>
+        <div className="main">
           {/* GRID */}
           <ProfileCard details={userDetails} />
           <ActivityList />
           <StatisticsGraph />
-          <SettingsPanel />
+          {/* <SettingsPanel
+            handleDetailsChange={handleDetailsChange}
+            userDetails={userDetails}
+          /> */}
         </div>
       </div>
     </Providers>
