@@ -176,7 +176,7 @@ function ProfileCard() {
         onClick={() => setShowFull((prev) => !prev)}
         className="profile__settings"
       >
-        <span className="material-symbols-outlined">settings</span>
+        <span className="material-symbols-outlined">edit</span>
       </button>
 
       {showFull && (

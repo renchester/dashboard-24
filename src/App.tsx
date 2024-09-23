@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Providers from './Providers';
 import ProfileCard from './components/ProfileCard';
 import ActivityList from './components/ActivityList';
 import StatisticsGraph from './components/StatisticsGraph';
@@ -22,8 +21,8 @@ function App() {
     setEmailStatus((currentStatus) => !currentStatus);
 
   return (
-    <Providers>
-      <div className={`app ${isDark ? 'dark-mode' : ''}`}>
+    <div className={`body ${isDark ? 'dark-mode' : ''}`}>
+      <div className="app">
         <div className="top">
           <h1>Dashboard</h1>
           <SettingsPanel
@@ -40,7 +39,7 @@ function App() {
           <StatisticsGraph />
         </div>
       </div>
-    </Providers>
+    </div>
   );
 }
 

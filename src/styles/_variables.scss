@@ -1,9 +1,9 @@
 @use './mixins' as mx;
 
-.app {
-  --max-page-width: 1400px;
-  --distance-top: 2rem;
-  --sidebar-width: 225px;
+.body {
+  --max-page-width: 1340px;
+  --distance-top: 1rem;
+  --grid-gap: 1.125rem;
 
   //====== FONT SIZE VARIABLES ======//
 
@@ -28,7 +28,6 @@
   //====== FONT VARIABLES ======//
   --font-poppins: 'Poppins', Arial, Helvetica, sans-serif, monospace;
   --font-inter: 'Inter', Arial, Helvetica, sans-serif, monospace;
-  --font-raleway: 'Raleway', Arial, Helvetica, sans-serif, monospace;
   --font-quicksand: 'Quicksand', Times, 'Times New Roman', serif, monospace;
 
   //====== COLOR VARIABLES ======//
@@ -39,10 +38,14 @@
   --color-accent-3: #8f9bba;
 
   --color-success: #01b574;
+  --color-ongoing: #c9c152;
   --color-error: #ee5d50;
+  --color-pending: #5285af;
 
   --color-background: #fefefe;
   --color-background-accent: #f5f7fe;
+  --color-background-accent2: #d6dbec;
+  --color-background-accent3: #c8cddf;
   --color-background-alpha75: #fefefebe;
   --color-background-alpha50: #fefefe86;
   --color-background-alpha25: #fefefe48;
@@ -82,39 +85,43 @@
   --border-radius-2: 4.5px;
 }
 
-.app.dark-mode {
+.body.dark-mode {
   //====== COLOR VARIABLES ======//
-  --color-primary: #422afb;
-  --color-secondary: #80d8ff;
-  --color-accent-1: #202b5d;
-  --color-accent-2: #11047a;
-  --color-accent-3: #8f9bba;
+  --color-primary: #6f7fff; /* lighter shade for visibility */
+  --color-secondary: #4db6ff; /* brighter for contrast */
+  --color-accent-1: #9bb8fc; /* lighter for readability */
+  --color-accent-2: #655bd6; /* more visible */
+  --color-accent-3: #88898d; /* softer for dark mode */
 
-  --color-success: #01b574;
-  --color-error: #ee5d50;
+  --color-success: #0aa15b; /* slightly lighter for clarity */
+  --color-ongoing: #9c8107; /* adjust for dark backgrounds */
+  --color-error: #fc5858; /* bright for visibility */
+  --color-pending: #3a89b6; /* more vibrant */
 
-  --color-background: #fefefe;
-  --color-background-accent: #f5f7fe;
-  --color-background-alpha75: #fefefebe;
-  --color-background-alpha50: #fefefe86;
-  --color-background-alpha25: #fefefe48;
-  --color-background-opposite: #353535;
+  --color-background: #272727; /* dark background */
+  --color-background-accent: #2e2e2e; /* darker accent */
+  --color-background-accent2: #383838; /* softer accent */
+  --color-background-accent3: #585858; /* lighter dark */
+  --color-background-alpha75: rgba(24, 24, 24, 0.75); /* transparent dark */
+  --color-background-alpha50: rgba(24, 24, 24, 0.5); /* lighter */
+  --color-background-alpha25: rgba(24, 24, 24, 0.25); /* very light */
+  --color-background-opposite: #e0e0e0; /* light opposite color */
 
   --color-light-1: #fefefe;
   --color-light-2: #f4ebd9;
   --color-dark-1: #3a3b37;
   --color-dark-2: #090909;
 
-  --color-text: #1c1c1c;
-  --color-text-accent: #3b3a42;
-  --color-text-alpha75: #3b3a42b7;
-  --color-text-alpha50: #3b3a4283;
-  --color-text-alpha25: #3b3a4248;
-  --color-text-alpha10: #3b3a421f;
-  --color-text-opposite: #f2f5ff;
+  --color-text: #e0e0e0; /* light text */
+  --color-text-accent: #d1d1d7; /* accent text lighter */
+  --color-text-alpha75: rgba(209, 209, 215, 0.75); /* semi-transparent */
+  --color-text-alpha50: rgba(209, 209, 215, 0.5); /* more transparent */
+  --color-text-alpha25: rgba(209, 209, 215, 0.25); /* very transparent */
+  --color-text-alpha10: rgba(209, 209, 215, 0.1); /* super light */
+  --color-text-opposite: #1c1c1c; /* dark for emphasis */
 
   --color-grey-light-1: #e9e9e9;
-  --color-grey-light-2: #f2efee;
+  --color-grey-light-2: #555555;
   --color-grey-light-3: #d3c7c3;
   --color-grey-dark-1: #4b4747;
   --color-grey-dark-2: #272525;
