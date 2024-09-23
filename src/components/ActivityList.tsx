@@ -78,7 +78,7 @@ function ActivityList() {
     },
     {
       id: '5',
-      title: 'Client meeting: Project Kickoff',
+      title: 'Client meeting with Mr. Juan',
       date: subHours(now, 5).toISOString(),
       status: 'Completed',
       assignee: ['Juan Dela Cruz'],
@@ -121,7 +121,7 @@ function ActivityList() {
     },
     {
       id: '11',
-      title: 'Internal project discussion',
+      title: 'Internal project discussion with team',
       date: subHours(now, 24 + 3).toISOString(),
       status: 'Completed',
       assignee: ['John Doe', 'Jane Smith'],
@@ -135,7 +135,7 @@ function ActivityList() {
     },
     {
       id: '13',
-      title: 'Code review session',
+      title: 'Code review session with Jan',
       date: subHours(now, 24 + 6).toISOString(),
       status: 'Overdue',
       assignee: ['Jane Smith'],
@@ -171,7 +171,7 @@ function ActivityList() {
     },
     {
       id: '18',
-      title: 'Client meeting: Progress update',
+      title: 'Client meeting, progress update with Mr. Juan',
       date: subHours(now, 48 + 3).toISOString(),
       status: 'Completed',
       assignee: ['Juan Dela Cruz'],
@@ -234,6 +234,7 @@ function ActivityList() {
       {showFull && (
         <Overlay hideChildren={hideChildren}>
           <div className="modal">
+            <h2>Activity Log</h2>
             <button type="button" onClick={hideChildren} className="btnClose">
               <span className="material-symbols-outlined">close</span>
             </button>

@@ -333,6 +333,7 @@ body {
 
   &__date {
     color: var(--color-text-accent);
+    font-weight: 300;
   }
 }
 
@@ -373,7 +374,7 @@ body {
 
 .modal {
   position: absolute;
-  width: min(90%, 800px);
+  width: min(100%, 800px);
   padding: 1.25rem 0.85rem;
   left: 50%;
   top: 50%;
