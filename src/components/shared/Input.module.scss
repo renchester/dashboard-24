@@ -1,0 +1,67 @@
+@use 'src/styles/placeholders';
+@use 'src/styles/mixins' as mx;
+
+.input {
+  --padding-inline: 1.5em;
+  position: relative;
+  margin-inline: auto;
+  width: 100%;
+  margin-bottom: 1rem;
+  text-align: left;
+
+  &__label {
+    display: inline-block;
+    margin-bottom: 0.5em;
+    margin-left: calc(var(--padding-inline) / 2);
+    font-weight: 500;
+    color: var(--color-text-accent);
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__input {
+    padding: 0.75em var(--padding-inline);
+    background: var(--color-light-1);
+    border: var(--border-emph);
+    border-radius: var(--border-radius-1);
+    width: 100%;
+    font-size: var(--text-sm);
+  }
+
+  &__iconContainer {
+    width: 25px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(50%);
+    height: 24px;
+    width: 24px;
+    margin-right: 0.5rem;
+    padding: 5px;
+    border-radius: var(--border-radius-full);
+    color: var(--color-light-1);
+    box-shadow: var(--box-shadow-1);
+
+    &.valid {
+      background: var(--color-success);
+    }
+
+    &.invalid {
+      background: var(--color-error);
+    }
+  }
+
+  &__error {
+    position: absolute;
+    left: var(--padding-inline);
+    top: calc(100% + 1px);
+    color: var(--color-error);
+    font-size: var(--text-2xs);
+    font-weight: 500;
+  }
+}
