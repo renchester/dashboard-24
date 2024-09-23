@@ -25,7 +25,7 @@ ChartJS.register(
   PointElement,
 );
 
-function StatisticsGraph() {
+function StatisticsGraph({ isDark }: { isDark: boolean }) {
   // Get the last 7 days including today
   const today = new Date();
   const lastWeek = eachDayOfInterval({
@@ -33,6 +33,8 @@ function StatisticsGraph() {
     end: today,
   });
   const weekLabels = lastWeek.map((day) => format(day, 'EEEE')); // Show day of the week
+
+  const getChartFontColor = () => (isDark ? 'white' : 'dark-grey');
 
   const commitData: ChartData<'bar'> = {
     labels: weekLabels,
@@ -72,36 +74,58 @@ function StatisticsGraph() {
 
   return (
     <div className="card card--graph graph">
-      <div className="graph__box graph__analytics">
+      <div className="graph__box">
         <h2>Web Analytics and Error Logs</h2>
         <Line
+          className="graph__analytics"
           data={analyticsData}
           options={{
             responsive: true,
+            color: getChartFontColor(),
             scales: {
               y: {
                 beginAtZero: true,
                 title: {
                   display: true,
                   text: 'Page Views',
+                  color: getChartFontColor(),
+                },
+                ticks: {
+                  color: getChartFontColor(),
+                },
+              },
+              x: {
+                ticks: {
+                  color: getChartFontColor(),
                 },
               },
             },
           }}
         />
       </div>
-      <div className="graph__box graph__commit">
+      <div className="graph__box ">
         <h2>Recent Commits</h2>
         <Bar
+          className="graph__commit"
           data={commitData}
           options={{
             responsive: true,
+            color: getChartFontColor(),
             scales: {
               y: {
                 beginAtZero: true,
                 title: {
                   display: true,
                   text: 'No. of Commits',
+                  color: getChartFontColor(),
+                },
+                ticks: {
+                  color: getChartFontColor(),
+                },
+              },
+              x: {
+                ticks: {
+                  color: getChartFontColor(),
                 },
               },
             },

@@ -84,7 +84,7 @@ body {
   font-family: var(--font-inter);
   font-size: var(--text-sm);
   padding-top: var(--distance-top);
-  max-width: min(100vw, calc(var(--max-page-width) - var(--grid-gap)));
+  max-width: var(--max-page-width);
   margin-inline: auto;
 }
 
@@ -113,12 +113,13 @@ body {
 }
 
 .main {
-  height: calc(100vh - var(--distance-top));
-  overflow-x: hidden;
-  overflow-y: hidden;
   display: grid;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 35% auto;
   grid-template-rows: repeat(2, 1fr);
+  height: calc(100vh - var(--distance-top));
+  width: min(100vw, 100%);
+  overflow-y: hidden;
+  overflow-x: hidden;
   grid-template-areas:
     'profile activity'
     'graph graph';
@@ -334,6 +335,7 @@ body {
   &__date {
     color: var(--color-text-accent);
     font-weight: 300;
+    font-size: 0.95rem;
   }
 }
 
@@ -350,6 +352,7 @@ body {
 
   &__box {
     width: 100%;
+    color: var(--color-text-accent);
   }
 }
 
@@ -383,6 +386,8 @@ body {
   background: var(--color-background-accent);
   overflow-y: auto;
   border-radius: var(--border-radius-2);
+  border: 1px solid var(--color-grey-light-2);
+  box-shadow: var(--box-shadow-medium);
 }
 
 .btnClose {

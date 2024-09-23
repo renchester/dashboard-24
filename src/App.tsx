@@ -36,7 +36,7 @@ function App() {
           {/* GRID */}
           <ProfileCard />
           <ActivityList />
-          <StatisticsGraph />
+          <StatisticsGraph isDark={isDark} />
         </div>
       </div>
     </div>
